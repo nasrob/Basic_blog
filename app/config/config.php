@@ -13,3 +13,9 @@ define('DB_HOST', 'localhost:' . '3306');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'blog_mvc');
+
+// Article Categories
+const SPORTS_ARTICELS = 'Sports';
+const BUSINESS_ARTICLES = 'Business';
+const TECH_ARTICLES = 'Tech';
+const LIFE_STYLE_ARTICLES = 'LifeStyle'; 

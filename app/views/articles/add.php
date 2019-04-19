@@ -17,17 +17,19 @@
                     <?php echo (!empty($data['body_err'])) ? 'is-invalid' : ''; ?>">
                     <?php echo $data['body']; ?>
                 </textarea>
-                <span class="invalid-feedback"><?php echo $data['body_err']; ?></span>            
+                <span class="invalid-feedback"><?php echo $data['body_err']; ?></span>
             </div>
+            <pre>
+                
+            </pre>
             <div class="form-group">
                 <label for="category">Category</label>
                 <select name="category" class="form-control">
                     <option value="">-- Select a Category --</option>
-                    <!-- <?php
-                        $categories = $app['config']['categories'];
-                    ?>
-                    <?php foreach ($categories as $category)?>
-                    <option value="<?= $category ?>"><?= $category ?></option> -->
+                    <option value="<?= SPORTS_ARTICELS ?>">Sport</option>
+                    <option value="<?= BUSINESS_ARTICLES ?>">Business</option>
+                    <option value="<?= TECH_ARTICLES ?>">Technology</option>
+                    <option value="<?= LIFE_STYLE_ARTICLES ?>">Life style</option>
                 </select>
                 
                 <div class="my-3">

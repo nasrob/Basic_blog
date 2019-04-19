@@ -80,6 +80,7 @@ class Database {
                     $type = PDO::PARAM_INT;
             }
         }
+        
         $this->statement->bindValue($param, $value, $type);
     }
 
@@ -123,5 +124,23 @@ class Database {
     public function count()
     {
         return $this->statement->rowCount();
+    }
+
+
+    public function insert($table, $parameters)
+    {
+        $sql = sprintf(
+            'insert into %s (%s) values (%s)',
+            $table,
+            implode(', ', array_keys($parameters)),
+            ':' . implode(', :', array_keys($parameters))
+        );
+        
+        try {
+            $statement = $this->db_handler->prepare($sql);
+            $statement->execute($parameters);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
     }
 }
